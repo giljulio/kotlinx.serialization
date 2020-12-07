@@ -212,11 +212,6 @@ class SerializersLookupTest : JsonTestBase() {
         assertEquals("42", json.encodeToString(42))
     }
 
-    // Tests with [constructSerializerForGivenTypeArgs] are unsupported on legacy Kotlin/JS
-    private inline fun noLegacyJs(test: () -> Unit) {
-        if (!isJsLegacy()) test()
-    }
-
     private inline fun <reified T> assertSerializedWithType(
         expected: String,
         value: T,
